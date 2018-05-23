@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Homework 2 - Xiuping Tan</title>
+    </head>
+    <style>
+        body {
+            margin-left: 15%;
+            width: 70%;
+            text-align: center;
+        }
+        h2,h3 {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            border: 1px solid gray;
+        }
+        p {
+            text-align: justify;
+            text-justify: inter-word;
+            font: 14pt sans-serif;
+        }
+        #link {
+            margin-top: 0;
+        }
+        svg {
+            text-align: left;
+            margin-left: 0;
+        }
+        #myTooltip {
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 5px;
+            overflow-x: visible;
+            overflow-y: visible;
+            background-color: lightgrey;
+        }
+        .axis { 
+            font: 12pt sans-serif; 
+        }
+        text {
+            font: 12pt sans-serif; 
+        }
+    </style>
+
+    <style src='./styles/myStyle.css'></style>
+
+    <body>
+        <header>
+            <h2 style=>Visualizations of Film Locations in San Francisco</h2>
+            <h3>Xiuping Tan&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;01/22/2018</h3>
+        </header>
+        <img src="cover.png" alt="Visualizations">
+        <br>
+        <p id="link">
+            Data Source: <a href="https://data.sfgov.org/Culture-and-Recreation/Film-Locations-in-San-Francisco/yitu-d5am">https://data.sfgov.org/Culture-and-Recreation/Film-Locations-in-San-Francisco/yitu-d5am</a>
+        </p>
+        <p>
+            &emsp;&emsp;The above dashboard uses data from DataSF about Film Locations in San Francisco from DataSF. It includes the titles, locations, fun facts, names of the director, writer, actors, and studio for filming locations of movies shot in S.F. starting from 1924. There are 1,622 rows in the dataset, which corresponds to one of the filming locations of S.F. in one movie. In the dataset, almost all the variables are categorical variables except the Released Year. My dashboard has three visualizations with a treemap, a line graph, and a bar graph.
+        </p>
+        <p>
+            &emsp;&emsp;The top one is a treemap of top 15 filming locations in San Francisco. Speaking of locations, the first thing that comes to mind is the S.F. map. However, this dataset only provides general location but not standard address. We are interested in knowing some popular filming locations. The visualization used areas mark with for color and count as magnitude channels. The color goes from blue to teal as the number of movies increases. The more movies filmed in that locations, the larger in size. The main reason for choosing a treemap as visual technique is that location names can be long and are hard to display as labels. A treemap has large spatial areas for text.
+        </p>
+        <p>
+            &emsp;&emsp;The line graph has a quantitative attribute using a line mark. Our interest in this visualization is to see the trends of how many movies filming in S.F. over time. The color of the line is blue, which is same as other visualizations. Since we only have categorical variables in our dataset, the only quantitative measure would be the number of data. Using one color is because no other measure values to compare with. 
+        </p>
+        <p>
+            &emsp;&emsp;The last one is the bar graph, which also displayed below using D3 visualization. It has two attributes using the horizontal spatial position channel for different directors (categories) and a line mark with vertical channel for the number of movies directed and filming in San Francisco. For color, I used one consistent color over all visualizations. The reason that I didn't use different colors for different directors is because it would look very distracting. I would like the audiences to focus on the values instead of coloring. 
+        </p>
+        <p>
+            &emsp;&emsp;Finally, I think my visualizations are successful at showing the data. The purpose of visualization is to provide insights and communicate findings. From my dashboard, it clearly tells which filming locations are most popular in San Francisco. It also finds the trend in number of movies filmed in S.F. over time. Suprisingly, there's a large rise in 2015. It also shows which director likes to film at S.F. the most. One thing can be improved is if we can transform the locations into address with latitude and longitude, we will be able to plot into a real San Francisco Map which easy to view.
+        </p>
+        <div id='myTooltip'></div>
+    </body>
+
+    <script src='./d3.v4.min.js'></script>
+    <script src='./scripts.js'></script>
+</html>
